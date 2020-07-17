@@ -1,0 +1,29 @@
+/* COLORS */
+$light-brown: #e4d2b7;
+$darker-pink: #d100ae;
+
+/* FONTS */
+//Lobster:
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+/* BASIC RULES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+body {
+    font-family: sans-serif;
+    position: relative;
+    background-color: $light-brown;
+    
+}
+
+a {
+    text-decoration: none;
+    color: $darker-pink;
+}
