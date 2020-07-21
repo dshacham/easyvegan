@@ -1,11 +1,10 @@
 
 import React, { useState, useEffect } from "react";
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "../style/App.scss";
 import Context from "./Context";
 import Home from "./Home";
 import NavBar from "./NavBar";
-// import logo from "../assets/img/sprinklesVer.png"
 
 const App = () => {
   const [sweets, setSweets] = useState('');
@@ -97,12 +96,11 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* <img src={sprinkle} id="left-sprinkles" alt="Sprinkles" /> */}
       <Context.Provider value={{ sweets, setSweets, savourys, setSavourys, recipes, setRecipes }}>
-        <HashRouter>
+        <Router>
           <NavBar />
           <Home />
-        </HashRouter>
+        </Router>
 
       </Context.Provider>
     </div>

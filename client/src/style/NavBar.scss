@@ -1,35 +1,29 @@
 @import "index";
 
-header {
-    display: flex;
-    flex-direction: column;
-}
-
-.sprinkles {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-}
-
-.navbar, .nav-group {
+nav ul, nav ul a {
     display: flex;
     justify-content: center;
+    color: black;
 }
 
-h1 {
-    font-family: 'Lobster', cursive;
-    margin: 0.5rem;
-    letter-spacing: 0.5rem;
-    font-size: 2.5rem;
-    position: absolute;
-    left: 0;
+nav ul a {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
 }
 
-.nav-group {
-    justify-content: center;
+nav ul a:hover {
+    border-bottom: 2px solid $mid-red;
 }
 
-li {
-    margin: 1.2rem;
-    font-size: 1.5rem;
+.selected {
+    border-bottom: 2px solid black;
+}
+
+.selected:hover {
+    border-bottom: 1px solid $mid-red;
+}
+
+nav li {
+    margin: 2rem;
+    font-size: 1rem;
 }

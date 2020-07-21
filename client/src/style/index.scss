@@ -1,10 +1,12 @@
 /* COLORS */
 $light-brown: #e4d2b7;
-$darker-pink: #d100ae;
+$dark-brown: rgb(105, 68, 11);
+$darker-pink: #ff43e0;
+$mid-red: rgba(255, 0, 85, 0.74);
 
 /* FONTS */
 //Lobster:
-@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Red+Rose&display=swap");
 
 /* BASIC RULES */
 
@@ -17,13 +19,15 @@ $darker-pink: #d100ae;
 }
 
 body {
-    font-family: sans-serif;
-    position: relative;
-    background-color: $light-brown;
+    font-family: 'Red Rose', cursive;
+    // position: relative;
     
 }
 
 a {
     text-decoration: none;
-    color: $darker-pink;
+}
+
+a:hover {
+    color: $mid-red;
 }

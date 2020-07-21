@@ -1,27 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../style/NavBar.scss';
-import sprinkles from "../assets/img/sprinklesSmall.png"
 
 const NavBar = () => {
+    const [navClass, setNavClass] = useState("/");
 
     return (
-        <header>
-            <img src={sprinkles} id="sprinkles" alt="Sprinkles" />
-            <div className="navbar">
-                <div className="logo">
-                    <NavLink to="/">
-                        <h1>EASY VEGAN</h1>
-                    </NavLink>
-                </div>
-                <nav>
-                    <ul className="nav-group">
-                        <li>Sweet &amp; Easy</li>
-                        <li>Savoury &amp; Easy</li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+        <nav>
+            <ul>
+                <li onClick={() => setNavClass(window.location.pathname)} className={navClass !== "/sweets" && navClass !== "/savourys" ? "selected" : ""}><NavLink to="/">EASY VEGAN</NavLink></li>
+                <li onClick={() => setNavClass(window.location.pathname)} className={navClass === "/sweets" ? "selected" : ""}><NavLink to="sweets">Sweet Recipes</NavLink></li>
+                <li onClick={() => setNavClass(window.location.pathname)} className={navClass === "/savourys" ? "selected" : ""}><NavLink to="savourys">Savoury Recipes</NavLink></li>
+            </ul>
+        </nav>
     );
 }
 
