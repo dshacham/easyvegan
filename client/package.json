@@ -9,11 +9,15 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "node-sass": "^4.14.1",
     "particles-bg": "^2.5.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-favicon": "0.0.18",
+    "react-fontawesome": "^1.7.1",
     "react-particle-backgrounds": "^1.0.2",
     "react-particles-js": "^3.2.1",
     "react-responsive-carousel": "^3.2.9",

@@ -5,6 +5,8 @@ import "../style/App.scss";
 import Context from "./Context";
 import Home from "./Home";
 import NavBar from "./NavBar";
+import Recommended from "./Recommended";
+import Footer from "./Footer";
 
 const App = () => {
   const [sweets, setSweets] = useState('');
@@ -24,28 +26,28 @@ const App = () => {
       }
     };
 
-    const allRecipes = [];
+    // const allRecipes = [];
 
-    const request1 = await fetch("/recipes", options);
-    const response1 = await request1.json();
-    response1.recipes.map(recipe => {
-      allRecipes.push({
-        title: recipe.title,
-        description: recipe.description,
-        imgUrl: recipe.imgUrl,
-        category: recipe.category,
-        preparation: recipe.preparation,
-        cooking: recipe.cooking,
-        yield: recipe.yield,
-        ings: recipe.ings,
-        directions: recipe.directions,
-        cookware: recipe.cookware,
-        comments: recipe.comments,
-        sourceURL: recipe.sourceURL
-      });
-    });
+    // const request1 = await fetch("/recipes", options);
+    // const response1 = await request1.json();
+    // response1.recipes.map(recipe => {
+    //   allRecipes.push({
+    //     title: recipe.title,
+    //     description: recipe.description,
+    //     imgUrl: recipe.imgUrl,
+    //     category: recipe.category,
+    //     preparation: recipe.preparation,
+    //     cooking: recipe.cooking,
+    //     yield: recipe.yield,
+    //     ings: recipe.ings,
+    //     directions: recipe.directions,
+    //     cookware: recipe.cookware,
+    //     comments: recipe.comments,
+    //     sourceURL: recipe.sourceURL
+    //   });
+    // });
 
-    setRecipes(allRecipes);
+    // setRecipes(allRecipes);
 
     const allSweets = [];
 
@@ -94,12 +96,23 @@ const App = () => {
     setSavourys(allSavourys);
   }
 
+  useEffect(() => {
+    fetchRecipes();
+  }, []);
+
   return (
     <div className="App">
-      <Context.Provider value={{ sweets, setSweets, savourys, setSavourys, recipes, setRecipes }}>
+      <Context.Provider value={{ sweets, setSweets, savourys, setSavourys, recipes, setRecipes, fetchRecipes }}>
         <Router>
           <NavBar />
-          <Home />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            {/* <Route path="/sweets" exact component={Sweets} />
+            <Route path="/savourys" exact component={Savourys} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/faq" component={Faq} /> */}
+          </Switch>
+          <Footer />
         </Router>
 
       </Context.Provider>

@@ -6,7 +6,7 @@ const env = require("./config/config");
 const port = process.env.PORT || 4000;
 
 const indexRoute = require("./routes/indexRoute");
-const recipesRoute = require("./routes/recipesRoute");
+// const recipesRoute = require("./routes/recipesRoute");
 const sweetRoute = require("./routes/sweetRoute");
 const savouryRoute = require("./routes/savouryRoute");
 const imgRoute = require("./routes/imgRoute");
@@ -19,7 +19,7 @@ mongoose.connection.on("open", () => console.log("database connected"));
 server.use(express.json());
 
 server.use("/", indexRoute);
-server.use("/recipes", recipesRoute);
+// server.use("/recipes", recipesRoute);
 server.use("/sweets", sweetRoute);
 server.use("/savourys", savouryRoute);
 server.use("/image", imgRoute);

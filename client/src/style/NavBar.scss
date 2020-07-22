@@ -1,29 +1,39 @@
 @import "index";
 
-nav ul, nav ul a {
-    display: flex;
-    justify-content: center;
-    color: black;
-}
+nav {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    z-index: 101;
+    background-color: white;
+    width: 100%;
 
-nav ul a {
-    padding-bottom: 1rem;
-    border-bottom: 1px solid black;
-}
+    ul, ul a {
+        display: flex;
+        justify-content: center;
+        color: black;
+    }
 
-nav ul a:hover {
-    border-bottom: 2px solid $mid-red;
-}
+    ul a {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid black;
+    }
 
-.selected {
-    border-bottom: 2px solid black;
-}
+    ul a:hover {
+        border-bottom: 2px solid $mid-red;
+    }
 
-.selected:hover {
-    border-bottom: 1px solid $mid-red;
-}
+    .selected {
+        border-bottom: 2px solid black;
+    }
 
-nav li {
-    margin: 2rem;
-    font-size: 1rem;
+    .selected:hover {
+        border-bottom: 1px solid $mid-red;
+    }
+
+    li {
+        margin: 2rem;
+        font-size: 1rem;
+    }
 }
