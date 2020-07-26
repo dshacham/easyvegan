@@ -15,7 +15,7 @@ const RecipeCard = ({ el, setIsRecipeClicked }) => {
                 setRecipeInfo(el);
                 localStorage.setItem('recipe-info', JSON.stringify(el));
                 setIsRecipeClicked(true);
-            }} className="button see-more">See more</button>
+            }} className="button see-more">SEE MORE</button>
         </div>
     )
 }

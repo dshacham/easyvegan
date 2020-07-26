@@ -14,7 +14,6 @@ const RecipeInfo = () => {
             setRecipeInfo(JSON.parse(recipe));
         }
     }, []);
-
     return (
         <div className="recipe-info-container">
             {

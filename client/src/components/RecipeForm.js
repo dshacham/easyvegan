@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import Context from './Context';
 import '../style/RecipeForm.scss';
 import axios from 'axios';
 
 const RecipeForm = () => {
-
     const history = useHistory();
+    const { recipeInfo, setRecipeInfo } = useContext(Context);
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -42,11 +43,9 @@ const RecipeForm = () => {
         formBody.append('preparation', preparation);
         formBody.append('cooking', cooking);
         formBody.append('amount', amount);
-        // formBody.append('ings', ings);
         for (let i = 0; i < ings.length; i++) {
             formBody.append('ings[]', ings[i]);
         }
-        // formBody.append('directions', directions);
         for (let i = 0; i < directions.length; i++) {
             formBody.append('directions[]', directions[i]);
         }
@@ -54,15 +53,15 @@ const RecipeForm = () => {
         formBody.append('comments', comments);
         formBody.append('sourceURL', sourceURL);
 
-
         try {
             const res = await axios.post('http://localhost:4000/recipes', formBody, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
-                }
+                },
             });
 
             if (res.status) {
+                localStorage.setItem('recipe-info', JSON.stringify(res.data.recipe));
                 setStatusAdded(true)
             }
 
@@ -86,7 +85,7 @@ const RecipeForm = () => {
     }
 
     useEffect(() => {
-        statusAdded && history.push('/recipes');
+        statusAdded && history.push("/recipe");
     })
 
     return (

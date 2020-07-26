@@ -22,7 +22,7 @@ const Recipes = () => {
     useEffect(() => {
         isRecipeClicked && history.push('/recipe');
     });
-    console.log(recipes)
+
     return (
         <div className="pool-recipe">
             {
@@ -34,7 +34,7 @@ const Recipes = () => {
                     </Fragment>
                     :
                     <div className="loading-message">
-                        <p><FontAwesomeIcon icon={faSpinner} spin style={{ color: "rgb(37, 110, 172)" }} /> Loading...</p>
+                        <p><FontAwesomeIcon icon={faSpinner} spin style={{ color: "black" }} /> Loading...</p>
                     </div>
             }
         </div>

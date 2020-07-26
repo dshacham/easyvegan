@@ -6,7 +6,6 @@ const env = require("../config/config");
 
 // Mongo URI
 const mongoURI = env.db;
-
 // Create mongo connection
 const conn = mongoose.createConnection(mongoURI);
 
@@ -21,6 +20,7 @@ conn.once('open', () => {
 
 
 exports.getRecipes = async (req, res, next) => {
+
     try {
         const recipes = await Recipes.find();
         res.json({ success: true, recipes: recipes });
@@ -45,7 +45,7 @@ exports.getRecipe = async (req, res, next) => {
 
 exports.getImage = async (req, res) => {
     gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
-        res.contentType("image/png");
+        res.contentType("image/jpeg");
         const readStream = gfs.createReadStream(file.filename);
         console.log(file, "file");
         readStream.pipe(res);
@@ -62,7 +62,7 @@ exports.postRecipe = async (req, res, next) => {
             category: req.body.category,
             preparation: req.body.preparation,
             cooking: req.body.cooking,
-            yield: req.body.yield,
+            amount: req.body.amount,
             ings: req.body.ings,
             directions: req.body.directions,
             cookware: req.body.cookware,
@@ -70,11 +70,7 @@ exports.postRecipe = async (req, res, next) => {
             sourceURL: req.body.sourceURL
         });
         await newRecipe.save();
-
-        // let userData = await User.findById(req.user._id);
-        // userData.events.push(newEvent._id);
-        // userData.save();
-        res.json({ success: true, recipe: newRecipe/*, user: userData*/ });
+        res.json({ success: true, recipe: newRecipe });
     }
     catch (err) {
         next(err);

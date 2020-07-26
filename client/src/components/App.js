@@ -11,12 +11,14 @@ import RecipeInfo from "./RecipeInfo";
 import Recipes from "./Recipes";
 import Sweets from "./Sweets";
 import Savourys from "./Savourys";
+import About from "./About";
 
 const App = () => {
   const [sweets, setSweets] = useState('');
   const [savourys, setSavourys] = useState('');
   const [recipes, setRecipes] = useState('');
 
+  const [newRecipe, setNewRecipe] = useState(null);
   const [recipeInfo, setRecipeInfo] = useState(null);
 
   useEffect(() => {
@@ -108,7 +110,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Context.Provider value={{ sweets, setSweets, savourys, setSavourys, recipes, setRecipes, recipeInfo, setRecipeInfo, fetchRecipes }}>
+      <Context.Provider value={{ sweets, setSweets, savourys, setSavourys, recipes, setRecipes, recipeInfo, setRecipeInfo, newRecipe, setNewRecipe, fetchRecipes }}>
         <Router>
           <NavBar />
           <Switch>
@@ -118,8 +120,9 @@ const App = () => {
             <Route path="/recipe" exact component={RecipeInfo} />
             <Route path="/sweets" exact component={Sweets} />
             <Route path="/savourys" exact component={Savourys} />
-            {/* <Route path="/contact" component={Contact} />
-            <Route path="/faq" component={Faq} /> */}
+            <Route path="/about" component={About} />
+            <Route path="/addrecipes" component={RecipeForm} />
+            {/* <Route path="/faq" component={Faq} /> */}
           </Switch>
           <Footer />
         </Router>

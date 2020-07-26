@@ -13,7 +13,7 @@ const Home = () => {
                         <p>What are you in the mood for?</p>
                         <ul>
                             <li><NavLink to="sweets">SWEET</NavLink></li>
-                            <li><img id="vegan" src="../assets/img/vegan-icons.png" alt="100% vegan" /></li>
+                            <li><img id="vegan" src="../assets/img/vegan-icon.png" alt="100% vegan" /></li>
                             <li><NavLink to="savourys">SAVOURY</NavLink></li>
                         </ul>
                     </div>

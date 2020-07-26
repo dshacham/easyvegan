@@ -12,7 +12,9 @@ nav {
     ul, ul a {
         display: flex;
         justify-content: center;
+        align-items: flex-end;
         color: black;
+        text-align: center;
     }
 
     ul a {
@@ -35,5 +37,14 @@ nav {
     li {
         margin: 2rem;
         font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        li {
+            margin: 1rem;
+            font-size: 0.9rem;
+        }
     }
 }

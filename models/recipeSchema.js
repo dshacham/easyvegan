@@ -4,13 +4,13 @@ const { Schema } = mongoose;
 const RecipeSchema = new Schema({
     title: { type: String, required: true },
     description: { type: String },
-    imgURL: { type: String },
+    imgUrl: { type: String, required: true },
     category: { type: String, required: true },
     preparation: { type: String, required: true },
-    cooking: { type: String, required: true },
-    yield: { type: String },
-    ings: { type: String, required: true },
-    directions: { type: String, required: true },
+    cooking: { type: String },
+    amount: { type: String },
+    ings: { type: Array, required: true },
+    directions: { type: Array, required: true },
     cookware: { type: String },
     comments: { type: String },
     sourceURL: { type: String }

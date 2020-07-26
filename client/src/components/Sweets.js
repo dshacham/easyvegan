@@ -34,7 +34,7 @@ const Sweets = () => {
                     </Fragment>
                     :
                     <div className="loading-message">
-                        <p><FontAwesomeIcon icon={faSpinner} spin style={{ color: "rgb(37, 110, 172)" }} /> Loading...</p>
+                        <p><FontAwesomeIcon icon={faSpinner} spin style={{ color: "black" }} /> Loading...</p>
                     </div>
             }
         </div>
