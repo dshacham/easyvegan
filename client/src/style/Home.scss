@@ -9,13 +9,12 @@
 
 .big-container {
     position: relative;
-    top: 17vh;
+    top: 14.8vh;
     width: 100%;
     height: auto;
     animation: backgroundImgs 20s ease-in-out infinite normal none;
     background-size: contain;
     background-repeat: no-repeat;
-
 }
 
 @keyframes backgroundImgs {
@@ -40,19 +39,19 @@
     max-width: 50%;
     height: auto;
     margin: 18% auto;
-    padding: 0.1rem 0;
+    padding: 0.2vw;
     background-color: rgba(233, 233, 233, 0.7);
 }
 
 .smaller-container {
     border: 3px solid black;
-    margin: 1rem;
+    margin: 1vw;
 
     p {
         text-align: center;
-        font-size: 3rem;
+        font-size: 3.5vw;
         font-family: 'Lobster', cursive;
-        margin: 1rem;
+        margin: 1.3vw;
     }
     
     ul {
@@ -63,7 +62,7 @@
     }
 
     li {
-        font-size: 1.5rem;
+        font-size: 1.8vw;
         font-weight: bold;
         text-align: center;
         height: 100%;
@@ -73,143 +72,14 @@
     li:nth-of-type(2) {
         border-left: 5px solid black;
         border-right: 5px solid black;
-        padding: 0.4rem 2rem 0;
+        padding: 0.4vw 2.3vw 0;
         
     }
     #vegan {
-        max-width: 100%;
+        width: 7vw;
     }
 
     a {
         color: black;
     }
 }
-
-@media screen and (max-width: 605px) {
-    .smaller-container {
-        p {
-            font-size: 1rem;
-        }
-        a {
-            font-size: 0.7rem;
-        }
-        #vegan {
-            max-width: 55%;
-        }
-        li:nth-of-type(2) {
-            padding: 0.4rem 0 0;
-        }
-    }
-}
-
-@media screen and (min-width: 606px) {
-    .smaller-container {
-        p {
-            font-size: 1.2rem;
-        }
-        a {
-            font-size: 0.8rem;
-        }
-        #vegan {
-            max-width: 55%;
-        }
-        li:nth-of-type(2) {
-            padding: 0.4rem 0 0;
-        }
-    }
-}
-
-@media screen and (min-width: 719px) {
-    .smaller-container {
-        p {
-            font-size: 1.5rem;
-        }
-        a {
-            font-size: 1rem;
-        }
-        #vegan {
-            max-width: 55%;
-        }
-        li:nth-of-type(2) {
-            padding: 0.4rem 0 0;
-        }
-    }
-}
-
-@media screen and (min-width: 792px) {
-    .smaller-container {
-        p {
-            font-size: 1.7rem;
-        }
-        a {
-            font-size: 1rem;
-        }
-        #vegan {
-            max-width: 55%;
-        }
-        li:nth-of-type(2) {
-            padding: 0.4rem 0 0;
-        }
-    }
-}
-
-@media screen and (min-width: 870px) {
-    .smaller-container {
-        p {
-            font-size: 1.9rem;
-        }
-        a {
-            font-size: 1rem;
-        }
-        #vegan {
-            max-width: 55%;
-        }
-        li:nth-of-type(2) {
-            padding: 0.4rem 0 0;
-        }
-    }
-}
-
-@media screen and (min-width: 950px) {
-    .smaller-container {
-        p {
-            font-size: 2.1rem;
-        }
-        a {
-            font-size: 1.2rem;
-        }
-        #vegan {
-            max-width: 70%;
-        }
-    }
-}
-
-@media screen and (min-width: 1093px) {
-    .smaller-container {
-        p {
-            font-size: 2.5rem;
-        }
-        a {
-            font-size: 1.3rem;
-        }
-        #vegan {
-            max-width: 85%;
-        }
-    }
-}
-
-@media screen and (min-width: 1126px) {
-    .smaller-container {
-        p {
-            font-size: 3rem;
-        }
-        a {
-            font-size: 1.5rem;
-        }
-        li:nth-of-type(2) {
-            padding: 0.4rem 2rem 0;
-        }
-        
-    }
-}
-

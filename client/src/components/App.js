@@ -5,6 +5,7 @@ import "../style/App.scss";
 import Context from "./Context";
 import Home from "./Home";
 import NavBar from "./NavBar";
+import DropDownNav from "./DropDownNav";
 import Footer from "./Footer";
 import RecipeForm from "./RecipeForm";
 import RecipeInfo from "./RecipeInfo";
@@ -21,8 +22,19 @@ const App = () => {
   const [newRecipe, setNewRecipe] = useState(null);
   const [recipeInfo, setRecipeInfo] = useState(null);
 
+  const [navClass, setNavClass] = useState('/');
+
+  const [winWidth, setWinWidth] = useState('');
+
   useEffect(() => {
     window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
+    window.innerWidth > 768 ?
+      setWinWidth('desktop')
+      :
+      setWinWidth('mobile')
   }, [])
 
   const fetchRecipes = async () => {
@@ -110,9 +122,13 @@ const App = () => {
 
   return (
     <div className="App">
-      <Context.Provider value={{ sweets, setSweets, savourys, setSavourys, recipes, setRecipes, recipeInfo, setRecipeInfo, newRecipe, setNewRecipe, fetchRecipes }}>
+      <Context.Provider value={{ sweets, setSweets, savourys, setSavourys, recipes, setRecipes, recipeInfo, setRecipeInfo, newRecipe, setNewRecipe, fetchRecipes, navClass, setNavClass }}>
         <Router>
-          <NavBar />
+          {winWidth === 'desktop' ?
+            <NavBar />
+            :
+            <DropDownNav />
+          }
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/recipes" exact component={Recipes} />

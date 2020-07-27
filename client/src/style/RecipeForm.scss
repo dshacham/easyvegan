@@ -86,6 +86,9 @@ $border: 0.2rem;
                 }
                 .add-list {
                     padding: 0 1rem;
+                    color: white;
+                    background-color: black;
+                    font-weight: bold;
                 }
             }
         }
@@ -94,6 +97,8 @@ $border: 0.2rem;
             height: 2.8rem;
             margin: 1rem;
             font-weight: bold;
+            color: white;
+            background-color: black;
         }
         span {
             cursor: pointer;

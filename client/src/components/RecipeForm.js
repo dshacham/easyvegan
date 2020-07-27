@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import Context from './Context';
 import '../style/RecipeForm.scss';
 import axios from 'axios';
 
 const RecipeForm = () => {
     const history = useHistory();
-    const { recipeInfo, setRecipeInfo } = useContext(Context);
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');

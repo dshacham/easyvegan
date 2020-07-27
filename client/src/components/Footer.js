@@ -1,17 +1,24 @@
 import React from 'react';
-
-import { Link } from 'react-router-dom';
 import '../style/Footer.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuestionCircle, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
     return (
-        <footer className="footer-container space-navbar">
+        <footer>
             <div className="footer-name">&copy;EASYVEGAN2020</div>
-            <div className="footer-icons">
-                <Link to="/faq"><FontAwesomeIcon className="icon" title="Faq" icon={faQuestionCircle} /></Link>
-                <Link to="/contact"><FontAwesomeIcon className="icon" title="Contact Us" icon={faEnvelope} /></Link>
+            <div className="footer-contact">
+                <p>CONTACT:</p>
+                <a href="mailto: dshacham22@gmail.com" target="_blank">
+                    <FontAwesomeIcon className="icon" title="email me" icon={faEnvelope} />
+                </a>
+                <a href="https://www.linkedin.com/in/dana-shacham-937408163/" target="_blank">
+                    <FontAwesomeIcon className="icon" title="email me" icon={faLinkedin} />
+                </a>
+                <a href="https://github.com/dshacham" target="_blank">
+                    <FontAwesomeIcon className="icon" title="email me" icon={faAddressCard} />
+                </a>
             </div>
         </footer>
     )

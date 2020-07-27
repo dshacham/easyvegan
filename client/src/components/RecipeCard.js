@@ -6,8 +6,8 @@ const RecipeCard = ({ el, setIsRecipeClicked }) => {
     const { setRecipeInfo } = useContext(Context);
 
     return (
-        <div className="recipe-card scale-in-center">
-            <h3 className="recipe-title to-back">{el.title.toUpperCase()}</h3>
+        <div className="recipe-card">
+            <h3 className="recipe-title">{el.title.toUpperCase()}</h3>
             <img className="recipe-image" src={`http://localhost:4000${el.imgUrl}`} alt={el.title} />
             <p className="recipe-category">Category: {el.category}</p>
             <p className="recipe-desc">{el.description}</p>
@@ -15,7 +15,7 @@ const RecipeCard = ({ el, setIsRecipeClicked }) => {
                 setRecipeInfo(el);
                 localStorage.setItem('recipe-info', JSON.stringify(el));
                 setIsRecipeClicked(true);
-            }} className="button see-more">SEE MORE</button>
+            }} className="to-recipe">TO RECIPE</button>
         </div>
     )
 }

@@ -13,6 +13,7 @@ const RecipeInfo = () => {
         if (recipe) {
             setRecipeInfo(JSON.parse(recipe));
         }
+        console.log(recipeInfo)
     }, []);
     return (
         <div className="recipe-info-container">
@@ -39,14 +40,14 @@ const RecipeInfo = () => {
                                 <li>DESCRIPTION: <p>{recipeInfo.description}</p></li>
                                 <li>COOKING TIME: <p>{recipeInfo.cooking}</p></li>
                                 <li>YIELD: <p>{recipeInfo.amount}</p></li>
-                                <li>INGREDIENTS: {recipeInfo.ings.map((el, i) => <li key={i}>{i + 1}. {el}</li>)}</li>
+                                <li>INGREDIENTS: {recipeInfo.ings.map((el, i) => <p key={i}>{i + 1}. {el}</p>)}</li>
 
                             </ul>
                             <ul className="recipe-details-right">
                                 <li>PREPARATION TIME: <p>{recipeInfo.preparation}</p></li>
                                 <li>COOKWARE: <p>{recipeInfo.cookware}</p></li>
                                 <li>COMMENTS: <p>{recipeInfo.comments}</p></li>
-                                <li>DIRECTIONS: {recipeInfo.directions.map((el, i) => <li key={i}>{i + 1}. {el}</li>)}</li>
+                                <li>DIRECTIONS: {recipeInfo.directions.map((el, i) => <p key={i}>{i + 1}. {el}</p>)}</li>
                             </ul>
                         </div>
 

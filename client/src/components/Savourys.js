@@ -10,9 +10,13 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 const Savourys = () => {
     const history = useHistory();
 
-    const { savourys } = useContext(Context);
+    const { savourys, setNavClass } = useContext(Context);
 
     const [isRecipeClicked, setIsRecipeClicked] = useState(false);
+
+    useEffect(() => {
+        setNavClass(window.location.pathname);
+    }, [])
 
     useEffect(() => {
         window.scrollTo(0, 0);
