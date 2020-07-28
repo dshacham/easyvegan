@@ -1,0 +1,55 @@
+$border-black: 3px solid black;
+@import 'index';
+
+.about {
+    margin: 8rem auto 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45vw;
+
+    .box {
+        text-align: center;
+        border: $border-black;
+        width: 100%;
+
+        h2 {
+            font-size: 4.5vw;
+            border-bottom: $border-black;
+            padding: 2vw 6.7vw;
+        }
+
+        h5 {
+            font-size: 1.4vw;
+            font-weight: 100;
+            padding: 1.2vw 0;
+        }
+    }
+
+    .about-box {
+        margin: 0 auto;
+
+        h3 {
+            letter-spacing: 0.5vw;
+            margin: 2.5rem auto;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        p {
+            margin: 2rem auto;
+            text-align: justify;
+            text-align-last: center;
+            line-height: 1.5;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about {
+        width: 60vw;
+    }
+}
