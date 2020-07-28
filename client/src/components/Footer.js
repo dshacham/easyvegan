@@ -7,7 +7,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 const Footer = () => {
     return (
         <footer>
-            <div className="footer-name">&copy;EASYVEGAN2020</div>
+            <p className="footer-name">&copy;EASYVEGAN2020</p>
             <div className="footer-contact">
                 <p>CONTACT:</p>
                 <a href="mailto: dshacham22@gmail.com" target="_blank">
