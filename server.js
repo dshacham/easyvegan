@@ -1,6 +1,7 @@
 const express = require("express");
 const server = express();
 const mongoose = require("mongoose");
+const createError = require("http-errors");
 const env = require("./config/config");
 const { cors } = require("./middleware/security");
 
@@ -28,6 +29,14 @@ server.use("/sweets", sweetRoute);
 server.use("/savourys", savouryRoute);
 server.use("/image", imgRoute);
 server.use("/imgrecipe", imgRecipeRoute);
+
+server.use((req, res, next) => {
+    next(createError(404));
+});
+
+server.use((err, req, res, next) => {
+    res.json({ status: err.status, err: err.message });
+});
 
 server.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`);
