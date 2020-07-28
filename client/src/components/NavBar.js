@@ -8,13 +8,13 @@ const NavBar = () => {
 
     useEffect(() => {
         setNavClass(window.location.pathname);
-    }, []);
+    });
 
     return (
         <nav className="nav">
             <ul>
                 <li
-                    className={navClass !== "/sweets" && navClass !== "/savourys" && navClass !== "/about" && navClass !== "/addrecipe" ? "selected" : ""}>
+                    className={navClass !== "/" ? "selected" : ""}>
                     <NavLink to="/">EASY VEGAN</NavLink>
                 </li>
                 <li
