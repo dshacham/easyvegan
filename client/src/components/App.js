@@ -140,8 +140,8 @@ const App = () => {
             <Route path="/recipe" exact component={RecipeInfo} />
             <Route path="/sweets" exact component={Sweets} />
             <Route path="/savourys" exact component={Savourys} />
-            <Route path="/about" component={About} />
-            <Route path="/addrecipes" component={RecipeForm} />
+            <Route path="/about" exact component={About} />
+            <Route path="/addrecipes" exact component={RecipeForm} />
           </Switch>
           <Footer />
         </Router>

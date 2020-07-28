@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import HamburgerMenu from 'react-hamburger-menu';
 import Context from './Context';
@@ -7,8 +7,12 @@ import '../style/DropDownNav.scss';
 const DropDownNav = () => {
     const { navClass, setNavClass } = useContext(Context);
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isMenuClicked, setIsMenuClicked] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false); //hamburger
+    const [isMenuClicked, setIsMenuClicked] = useState(false); //pages-list
+
+    useEffect(() => {
+        setNavClass(window.location.pathname);
+    });
 
     const handleMenuClick = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -27,29 +31,24 @@ const DropDownNav = () => {
                     isMenuClicked ?
                         <ul className={isMenuOpen === false ? "ul-drop slide-out" : "ul-drop slide-in"}>
                             <li
-                                onClick={() => setNavClass(window.location.pathname)}
-                                className={navClass !== "/sweets" && navClass !== "/savourys" && navClass !== "/about" && navClass !== "/addrecipe" ? "selected" : ""}>
-                                <NavLink to="/">EASY VEGAN</NavLink>
+                                className={navClass === "/" ? "selected" : ""}>
+                                <NavLink to="/" onClick={() => { setIsMenuClicked(false); setIsMenuOpen(false) }}>EASY VEGAN</NavLink>
                             </li>
                             <li
-                                onClick={() => setNavClass(window.location.pathname)}
-                                className={navClass === "/about" ? "selected" : ""}>
-                                <NavLink to="about">About</NavLink>
+                                className={navClass === "/about" && navClass ? "selected" : ""}>
+                                <NavLink to="about" onClick={() => { setIsMenuClicked(false); setIsMenuOpen(false) }}>About</NavLink>
                             </li>
                             <li
-                                onClick={() => setNavClass(window.location.pathname)}
                                 className={navClass === "/sweets" ? "selected" : ""}>
-                                <NavLink to="sweets">Sweet</NavLink>
+                                <NavLink to="sweets" onClick={() => { setIsMenuClicked(false); setIsMenuOpen(false) }}>Sweet</NavLink>
                             </li>
                             <li
-                                onClick={() => setNavClass(window.location.pathname)}
                                 className={navClass === "/savourys" ? "selected" : ""}>
-                                <NavLink to="savourys">Savoury</NavLink>
+                                <NavLink to="savourys" onClick={() => { setIsMenuClicked(false); setIsMenuOpen(false) }}>Savoury</NavLink>
                             </li>
                             <li
-                                onClick={() => setNavClass(window.location.pathname)}
                                 className={navClass === "/addrecipe" ? "selected" : ""}>
-                                <NavLink to="addrecipe">Add Recipes</NavLink>
+                                <NavLink to="addrecipe" onClick={() => { setIsMenuClicked(false); setIsMenuOpen(false) }}>Add Recipes</NavLink>
                             </li>
                         </ul>
                         :
