@@ -21,7 +21,7 @@ mongoose.connection.on("open", () => console.log("database connected"));
 server.use(express.json());
 server.use(cors);
 server.use(express.urlencoded({ extended: false }));
-server.use(express.static("client/build"))
+server.use(express.static("client/build"));
 
 server.use("/", indexRoute);
 server.use("/recipes", recipesRoute);
