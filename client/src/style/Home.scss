@@ -14,7 +14,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-        background-attachment: fixed;
+        
 
         .question-container {
             width: 50%;
@@ -92,6 +92,7 @@
 @media screen and (max-width: 420px) {
     .home {
         .big-container {
+            margin-top: 0;
             .question-container {
                     width: 85%;
 
@@ -117,9 +118,11 @@
     } 
 }
 
-@media screen and (max-width: 689px) and (min-width: 420px) {
+@media screen and (max-width: 768px) and (min-width: 420px) {
     .home {
         .big-container {
+            margin-top: 0;
+
             .question-container {
                     width: 85%;
 
@@ -145,7 +148,7 @@
     } 
 }
 
-@media screen and (max-width: 950px) and (min-width: 690px) {
+@media screen and (max-width: 950px) and (min-width: 769px) {
     .home {
         .big-container {
             .question-container {

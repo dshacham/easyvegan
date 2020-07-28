@@ -32,11 +32,14 @@ const DropDownNav = () => {
 
     return (
         <div className="dd-nav">
-            <HamburgerMenu
-                className="hamburger"
-                isOpen={isMenuOpen}
-                menuClicked={handleMenuClick}
-            />
+            <div className="top-nav">
+                <HamburgerMenu
+                    className="hamburger"
+                    isOpen={isMenuOpen}
+                    menuClicked={handleMenuClick}
+                />
+                <p>EASY VEGAN</p>
+            </div>
             <nav className="dropdown">
                 {
                     isMenuClicked ?
