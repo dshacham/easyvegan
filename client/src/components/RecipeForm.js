@@ -52,7 +52,7 @@ const RecipeForm = () => {
         formBody.append('sourceURL', sourceURL);
 
         try {
-            const res = await axios.post('http://localhost:4000/recipes', formBody, {
+            const res = await axios.post('/recipes', formBody, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

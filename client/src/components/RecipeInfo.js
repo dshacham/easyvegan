@@ -13,7 +13,6 @@ const RecipeInfo = () => {
         if (recipe) {
             setRecipeInfo(JSON.parse(recipe));
         }
-        console.log(recipeInfo)
     }, []);
     return (
         <div className="recipe-info-container">
@@ -24,8 +23,8 @@ const RecipeInfo = () => {
                             <h2 className="recipe-info-title">{recipeInfo.title.toUpperCase()}</h2>
                             {
                                 recipeInfo.imgUrl &&
-                                <a target="_blank" href={`http://localhost:4000${recipeInfo.imgUrl}`}>
-                                    <img className="recipe-info-image" src={`http://localhost:4000${recipeInfo.imgUrl}`} alt={recipeInfo.title} />
+                                <a target="_blank" href={`${recipeInfo.imgUrl}`}>
+                                    <img className="recipe-info-image" src={`${recipeInfo.imgUrl}`} alt={recipeInfo.title} />
                                 </a>
                             }
                             {

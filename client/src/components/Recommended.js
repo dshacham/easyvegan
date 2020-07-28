@@ -9,16 +9,9 @@ const Recommended = () => {
     const [isRecClicked, setIsRecClicked] = useState(false);
 
     const handleToRecipe = async (id) => {
-        // const options = {
-        //     method: 'GET',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //         'Accept': 'application/json'
-        //     }
-        // };
 
         try {
-            const response = await axios.get('http://localhost:4000/recipes/' + id);
+            const response = await axios.get('/recipes/' + id);
             if (response.data.recipe._id === id && response.status) {
                 localStorage.setItem('recipe-info', JSON.stringify(response.data.recipe));
                 setIsRecClicked(true);

@@ -8,7 +8,7 @@ const RecipeCard = ({ el, setIsRecipeClicked }) => {
     return (
         <div className="recipe-card">
             <h3 className="recipe-title">{el.title.toUpperCase()}</h3>
-            <img className="recipe-image" src={`http://localhost:4000${el.imgUrl}`} alt={el.title} />
+            <img className="recipe-image" src={`${el.imgUrl}`} alt={el.title} />
             <p className="recipe-category">Category: {el.category}</p>
             <p className="recipe-desc">{el.description}</p>
             <button onClick={() => {

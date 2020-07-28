@@ -22,7 +22,7 @@ const Sweets = () => {
         window.scrollTo(0, 0);
     }, [])
 
-    // clicking 'SEE MORE' will redirect to the recipe page
+    // clicking 'TO RECIPE' will redirect to the recipe page
     useEffect(() => {
         isRecipeClicked && history.push('/recipe');
     });
