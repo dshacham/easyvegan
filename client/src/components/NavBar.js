@@ -14,7 +14,7 @@ const NavBar = () => {
         <nav className="nav">
             <ul>
                 <li
-                    className={navClass !== "/" ? "selected" : ""}>
+                    className={navClass !== "/sweets" && navClass !== "/savourys" && navClass !== "/about" && navClass !== "/addrecipe" ? "selected" : ""}>
                     <NavLink to="/">EASY VEGAN</NavLink>
                 </li>
                 <li
