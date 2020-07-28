@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../style/Home.scss';
 import { NavLink } from 'react-router-dom';
 import Recommended from "./Recommended";
 
 const Home = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, []);
 
     return (
         <div className="home">

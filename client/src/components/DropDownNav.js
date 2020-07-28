@@ -12,11 +12,22 @@ const DropDownNav = () => {
 
     useEffect(() => {
         setNavClass(window.location.pathname);
+        if (navClass !== "/about" &&
+            navClass !== "/sweets" &&
+            navClass !== "/savourys" &&
+            navClass !== "/addrecipe") {
+            setNavClass("/home")
+        };
     });
 
     const handleMenuClick = () => {
         setIsMenuOpen(!isMenuOpen);
         setIsMenuClicked(true);
+    }
+
+    const handlePageClick = () => {
+        setIsMenuClicked(false);
+        setIsMenuOpen(false);
     }
 
     return (
@@ -30,25 +41,25 @@ const DropDownNav = () => {
                 {
                     isMenuClicked ?
                         <ul className={isMenuOpen === false ? "ul-drop slide-out" : "ul-drop slide-in"}>
-                            <li
-                                className={navClass === "/" ? "selected" : ""}>
-                                <NavLink to="/" onClick={() => { setIsMenuClicked(false); setIsMenuOpen(false) }}>EASY VEGAN</NavLink>
+                            <li onClick={handlePageClick}
+                                className={navClass === "/home" ? "selected" : ""}>
+                                <NavLink to="/">EASY VEGAN</NavLink>
                             </li>
-                            <li
-                                className={navClass === "/about" && navClass ? "selected" : ""}>
-                                <NavLink to="about" onClick={() => { setIsMenuClicked(false); setIsMenuOpen(false) }}>About</NavLink>
+                            <li onClick={handlePageClick}
+                                className={navClass === "/about" ? "selected" : ""}>
+                                <NavLink to="about">About</NavLink>
                             </li>
-                            <li
+                            <li onClick={handlePageClick}
                                 className={navClass === "/sweets" ? "selected" : ""}>
-                                <NavLink to="sweets" onClick={() => { setIsMenuClicked(false); setIsMenuOpen(false) }}>Sweet</NavLink>
+                                <NavLink to="sweets">Sweet</NavLink>
                             </li>
-                            <li
+                            <li onClick={handlePageClick}
                                 className={navClass === "/savourys" ? "selected" : ""}>
-                                <NavLink to="savourys" onClick={() => { setIsMenuClicked(false); setIsMenuOpen(false) }}>Savoury</NavLink>
+                                <NavLink to="savourys">Savoury</NavLink>
                             </li>
-                            <li
+                            <li onClick={handlePageClick}
                                 className={navClass === "/addrecipe" ? "selected" : ""}>
-                                <NavLink to="addrecipe" onClick={() => { setIsMenuClicked(false); setIsMenuOpen(false) }}>Add Recipes</NavLink>
+                                <NavLink to="addrecipe">Add Recipes</NavLink>
                             </li>
                         </ul>
                         :

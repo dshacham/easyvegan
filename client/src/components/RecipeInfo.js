@@ -3,7 +3,6 @@ import Context from './Context';
 import '../style/RecipeInfo.scss';
 
 const RecipeInfo = () => {
-
     const { recipeInfo, setRecipeInfo } = useContext(Context);
 
     useEffect(() => {
@@ -14,6 +13,7 @@ const RecipeInfo = () => {
             setRecipeInfo(JSON.parse(recipe));
         }
     }, []);
+
     return (
         <div className="recipe-info-container">
             {
@@ -27,11 +27,13 @@ const RecipeInfo = () => {
                                     <img className="recipe-info-image" src={`${recipeInfo.imgUrl}`} alt={recipeInfo.title} />
                                 </a>
                             }
-                            {
-                                recipeInfo.sourceURL ?
-                                    <a href={recipeInfo.sourceURL} target='_blank' className="link-to-source" >RECIPE SOURCE</a>
-                                    : null
-                            }
+                            <div className="source-ph">
+                                {
+                                    recipeInfo.sourceURL ?
+                                        <a href={recipeInfo.sourceURL} target='_blank' className="link-to-source" >RECIPE SOURCE</a>
+                                        : null
+                                }
+                            </div>
                         </div>
 
                         <div className="recipe-details">

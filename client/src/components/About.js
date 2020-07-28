@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import Context from './Context';
 import '../style/About.scss';
 
@@ -7,7 +7,11 @@ const About = () => {
 
     useEffect(() => {
         setNavClass(window.location.pathname);
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, []);
 
     return (
         <div className="about">

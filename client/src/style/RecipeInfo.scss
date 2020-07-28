@@ -3,7 +3,7 @@ $bor-bottom: 1px solid rgba(255, 255, 255, 0.5);
 
 .recipe-info-container {
     margin: 7rem auto 2rem;
-    padding: 2rem;
+    padding: 1rem;
     width: 60%;
     background-color: black;
     color: white;
@@ -23,27 +23,29 @@ $bor-bottom: 1px solid rgba(255, 255, 255, 0.5);
         .recipe-info-image {
             width: 80%;
             height: auto;
-            margin: 2rem auto 0;
+            margin: 1rem auto 0;
             display: block;
         }
 
-        .link-to-source {
-            color: white;
-            font-size: 0.8rem;
+        .source-ph {
             margin-bottom: 2rem;
-        }
-        .link-to-source:hover {
-            color: $mid-red;
+            .link-to-source {
+                color: white;
+                font-size: 0.8rem;
+            }
+            .link-to-source:hover {
+                color: $mid-red;
+            }
         }
     }
 
     .recipe-details {
         display: flex;
         justify-content: space-evenly;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
 
         .recipe-details-left {
-            width: 40%;
+            width: 50%;
             margin-right: 0.5rem;
         }
         .recipe-details-right {
@@ -87,8 +89,8 @@ $bor-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 @media screen and (max-width: 768px) and (min-width: 421px) {
     .recipe-info-container {
-        margin: 4rem auto 2rem;
-        padding: 1rem;
+        margin: 4rem auto;
+        padding: 0.5rem;
         width: 90%;
         
         .recipe-details {
