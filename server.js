@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const env = require("./config/config");
 const { cors } = require("./middleware/security");
 
-const port = process.env.PORT || 4000;
+// const port = process.env.PORT || 4000;
 
 const indexRoute = require("./routes/indexRoute");
 const recipesRoute = require("./routes/recipesRoute");
@@ -29,4 +29,4 @@ server.use("/savourys", savouryRoute);
 server.use("/image", imgRoute);
 server.use("/imgrecipe", imgRecipeRoute);
 
-server.listen(port, () => console.log(`server is running on port ${port}`));
+// server.listen(port, () => console.log(`server is running on port ${port}`));
